@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1012421948044",
+    "project_id": "isro-quiz-348ad",
+    "storage_bucket": "isro-quiz-348ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012421948044:android:1fce211f2688f2e48a41a9",
+        "android_client_info": {
+          "package_name": "com.Soham.isro_quiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012421948044-l1luvkabtgmp3lfouebhlmbu74895it7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxxSrxIJi-lFJvowBEaz2N76ramU870no"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012421948044-l1luvkabtgmp3lfouebhlmbu74895it7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
