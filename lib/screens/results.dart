@@ -1,11 +1,12 @@
 import 'dart:io';
 import 'package:awesome_icons/awesome_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:isro_quiz/constants.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:path_provider/path_provider.dart';
-import 'package:open_document/open_document.dart';
+import 'package:easy_pdf_viewer/easy_pdf_viewer.dart';
 
 class Results extends StatelessWidget {
   Results({required this.UserAns});
@@ -43,8 +44,10 @@ class Results extends StatelessWidget {
     }
   }
 
-  void savepdf() async {
+  Future<Widget> savepdf() async {
     final pdf = pw.Document();
+    final font = await rootBundle.load('assets/open-sans.ttf');
+    final ttf = pw.Font.ttf(font);
 
     pdf.addPage(pw.Page(
         pageFormat: PdfPageFormat.a4,
@@ -57,11 +60,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Marks:',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 40),
                   ),
                   pw.Text(
                     '$marks',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                 ],
               ),
@@ -70,11 +73,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Easy:',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                   pw.Text(
                     '$easy/3',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                 ],
               ),
@@ -83,11 +86,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Medium:',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                   pw.Text(
                     '$medium/3',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                 ],
               ),
@@ -96,11 +99,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Hard:',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                   pw.Text(
                     '$hard/4',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                 ],
               ),
@@ -109,11 +112,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Physics:',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                   pw.Text(
                     '$phy/3',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                 ],
               ),
@@ -122,11 +125,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Chemistry:',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                   pw.Text(
                     '$chem/3',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                 ],
               ),
@@ -135,11 +138,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Astronomy:',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                   pw.Text(
                     '$astr/4',
-                    style: pw.TextStyle(fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
                   ),
                 ],
               ),
@@ -147,10 +150,11 @@ class Results extends StatelessWidget {
           ));
         })); // Center
 
-    final output = await getTemporaryDirectory();
-    final file = File("${output.path}/example.pdf");
+    final output = await getApplicationDocumentsDirectory();
+    final file = File("${output.path}/certificate.pdf");
     await file.writeAsBytes(await pdf.save());
-    await OpenDocument.openDocument(filePath: "${output.path}/example.pdf");
+    PDFDocument doc = await PDFDocument.fromFile(file);
+    return PDFViewer(document: doc);
   }
 
   @override
@@ -276,8 +280,10 @@ class Results extends StatelessWidget {
             ],
           ),
           TextButton.icon(
-            onPressed: () {
-              savepdf();
+            onPressed: () async {
+              Widget pdf = await savepdf();
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => pdf));
             },
             icon: Icon(
               FontAwesomeIcons.print,
