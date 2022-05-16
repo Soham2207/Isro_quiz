@@ -67,16 +67,6 @@ class _QuizState extends State<Quiz> {
           style: TextStyle(fontSize: 50.0),
         ),
         question,
-        TextButton(
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Results(
-                            UserAns: UserAns,
-                          )));
-            },
-            child: Text('Finish Test'))
       ],
     );
   }
