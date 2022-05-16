@@ -64,7 +64,7 @@ class Results extends StatelessWidget {
                   ),
                   pw.Text(
                     '$marks',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                 ],
               ),
@@ -73,11 +73,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Easy:',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                   pw.Text(
-                    '$easy/3',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    '$easy/4',
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                 ],
               ),
@@ -86,11 +86,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Medium:',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                   pw.Text(
                     '$medium/3',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                 ],
               ),
@@ -99,11 +99,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Hard:',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                   pw.Text(
-                    '$hard/4',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    '$hard/3',
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                 ],
               ),
@@ -112,11 +112,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Physics:',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                   pw.Text(
                     '$phy/3',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                 ],
               ),
@@ -125,11 +125,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Chemistry:',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                   pw.Text(
                     '$chem/3',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                 ],
               ),
@@ -138,11 +138,11 @@ class Results extends StatelessWidget {
                 children: [
                   pw.Text(
                     'Astronomy:',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                   pw.Text(
                     '$astr/4',
-                    style: pw.TextStyle(font: ttf, fontSize: 15.0),
+                    style: pw.TextStyle(font: ttf, fontSize: 25.0),
                   ),
                 ],
               ),
@@ -209,7 +209,7 @@ class Results extends StatelessWidget {
                 style: TextStyle(color: Colors.lightGreen, fontSize: 15.0),
               ),
               Text(
-                '$easy/3',
+                '$easy/4',
                 style: TextStyle(fontSize: 15.0),
               ),
             ],
@@ -235,7 +235,7 @@ class Results extends StatelessWidget {
                 style: TextStyle(color: Colors.red, fontSize: 15.0),
               ),
               Text(
-                '$hard/4',
+                '$hard/3',
                 style: TextStyle(fontSize: 15.0),
               ),
             ],
