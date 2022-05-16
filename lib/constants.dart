@@ -43,8 +43,8 @@ List<String> Questions = [
   'Hydrocarbons are organic molecules that contain the element carbon.(Easy)',
   'What are Germanium hydrides called _____________(Medium)',
   ' Which of the following carbon allotropes is amorphous(Medium)?',
-  'The position of a planet when it is nearest to the Sun is called(Easy)'
-      'On which of the following planets of the solar system does the sun rise in the west and set in the east?(Medium)',
+  'The position of a planet when it is nearest to the Sun is called(Easy)',
+  'On which of the following planets of the solar system does the sun rise in the west and set in the east?(Medium)',
   'Which one of the following planets takes the same number of days for rotation and revolution?(Hard)',
   'The orbits of planets around the Sun, or of satellites around the Earth can be(Hard)'
 ];

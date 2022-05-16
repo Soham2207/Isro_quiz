@@ -25,9 +25,13 @@ class _QuestionCardState extends State<QuestionCard> {
   Color buttonD = Colors.white;
   String ans = 'E';
   @override
-  void dispose() {
-    Quiz().UserAns.add(ans);
-    super.dispose();
+  void initState() {
+    buttonA = Colors.white;
+    buttonB = Colors.white;
+    buttonC = Colors.white;
+    buttonD = Colors.white;
+    // TODO: implement initState
+    super.initState();
   }
 
   @override
