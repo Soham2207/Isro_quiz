@@ -60,14 +60,28 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          timeleft.toString(),
-          style: TextStyle(fontSize: 50.0),
+    return Material(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: kThemeColor,
+          title: Text(
+            'Quiz',
+            style: TextStyle(color: Colors.white, fontSize: 20.0),
+          ),
         ),
-        question,
-      ],
+        body: Column(
+          children: [
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              timeleft.toString(),
+              style: TextStyle(fontSize: 50.0),
+            ),
+            question,
+          ],
+        ),
+      ),
     );
   }
 }
@@ -125,37 +139,38 @@ class _QuestionCardState extends State<QuestionCard> {
           SizedBox(
             height: 10.0,
           ),
-          Material(
-            borderRadius: BorderRadius.circular(30.0),
-            child: TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: buttonA,
-                elevation: 5.0,
-              ),
-              onPressed: () {
-                setState(() {
-                  buttonA = kThemeColor;
-                  buttonB = Colors.white;
-                  buttonC = Colors.white;
-                  buttonD = Colors.white;
-                  ans = 'A';
-                });
-              },
-              child: Row(
-                children: [
-                  CircleAvatar(
-                      child: Text(
-                    'A',
-                    style: TextStyle(color: Colors.black, fontSize: 15.0),
-                  )),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(widget.A,
-                      style: TextStyle(color: Colors.black, fontSize: 15.0)),
-                ],
-              ),
+          TextButton(
+            style: TextButton.styleFrom(
+              backgroundColor: buttonA,
+              elevation: 5.0,
             ),
+            onPressed: () {
+              setState(() {
+                buttonA = kThemeColor;
+                buttonB = Colors.white;
+                buttonC = Colors.white;
+                buttonD = Colors.white;
+                ans = 'A';
+              });
+            },
+            child: Row(
+              children: [
+                CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Text(
+                      'A',
+                      style: TextStyle(color: Colors.black, fontSize: 15.0),
+                    )),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text(widget.A,
+                    style: TextStyle(color: Colors.black, fontSize: 15.0)),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
           ),
           TextButton(
             style:
@@ -172,10 +187,11 @@ class _QuestionCardState extends State<QuestionCard> {
             child: Row(
               children: [
                 CircleAvatar(
+                    backgroundColor: Colors.white,
                     child: Text(
-                  'B',
-                  style: TextStyle(color: Colors.black, fontSize: 15.0),
-                )),
+                      'B',
+                      style: TextStyle(color: Colors.black, fontSize: 15.0),
+                    )),
                 SizedBox(
                   width: 10.0,
                 ),
@@ -183,6 +199,9 @@ class _QuestionCardState extends State<QuestionCard> {
                     style: TextStyle(color: Colors.black, fontSize: 15.0)),
               ],
             ),
+          ),
+          SizedBox(
+            height: 10.0,
           ),
           TextButton(
             style:
@@ -199,10 +218,11 @@ class _QuestionCardState extends State<QuestionCard> {
             child: Row(
               children: [
                 CircleAvatar(
+                    backgroundColor: Colors.white,
                     child: Text(
-                  'C',
-                  style: TextStyle(color: Colors.black, fontSize: 15.0),
-                )),
+                      'C',
+                      style: TextStyle(color: Colors.black, fontSize: 15.0),
+                    )),
                 SizedBox(
                   width: 10.0,
                 ),
@@ -210,6 +230,9 @@ class _QuestionCardState extends State<QuestionCard> {
                     style: TextStyle(color: Colors.black, fontSize: 15.0)),
               ],
             ),
+          ),
+          SizedBox(
+            height: 10.0,
           ),
           TextButton(
             style:
@@ -225,11 +248,12 @@ class _QuestionCardState extends State<QuestionCard> {
             },
             child: Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
+                    backgroundColor: Colors.white,
                     child: Text(
-                  'D',
-                  style: TextStyle(color: Colors.black, fontSize: 15.0),
-                )),
+                      'D',
+                      style: TextStyle(color: Colors.black, fontSize: 15.0),
+                    )),
                 SizedBox(
                   width: 10.0,
                 ),

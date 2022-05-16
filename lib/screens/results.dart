@@ -167,22 +167,6 @@ class Results extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontSize: 20.0),
         ),
         backgroundColor: kThemeColor,
-        actions: [
-          TextButton.icon(
-            icon: Icon(
-              FontAwesomeIcons.backward,
-              color: Colors.white,
-            ),
-            label: Text(
-              'Back',
-              style: TextStyle(color: Colors.white),
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-              Navigator.pop(context);
-            },
-          ),
-        ],
       ),
       body: Padding(
         padding: EdgeInsets.all(15.0),

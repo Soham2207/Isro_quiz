@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:isro_quiz/constants.dart';
 import 'package:isro_quiz/screens/about_screen.dart';
+import 'package:isro_quiz/screens/quiz_guidline.dart';
 import 'package:isro_quiz/screens/quiz_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -56,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen>
         body: TabBarView(
           children: [
             AboutScreen(),
-            Quiz(),
+            Guidlines(),
           ],
         ),
       ),
